@@ -1,4 +1,4 @@
-nav {
+.main-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,4 +20,95 @@ nav {
 .nav-logo {
   height: 60px;
   margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu-button {
+  display: none;
+}
+
+.mobile-nav {
+  height: 100%;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  width: 320px;
+  transition: 0.5s;
+  width: 0;
+}
+
+.mobile-nav.show-menu {
+  width: 0;
+}
+
+.mobile-nav.show-menu {
+  width: 320px;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+}
+
+.mobile-nav-items {
+  border-top: 1px solid #fff;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.nav-links li {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-link {
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: #fff;
+  color: #111;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-button {
+    display: flex;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: inline;
+  }
 }
