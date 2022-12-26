@@ -37,12 +37,17 @@
   z-index: 10;
   top: 0;
   right: 0;
-  background-color: #111;
+  background: rgba(0, 0, 0, 0.61);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5.1px);
+  backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   overflow-x: hidden;
   padding-top: 60px;
-  width: 320px;
+  width: 0;
   transition: 0.5s;
   width: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .mobile-nav.show-menu {
@@ -62,6 +67,7 @@
   top: 10px;
   left: 10px;
   font-size: 24px;
+  cursor: pointer;
 }
 
 .mobile-nav-items {
