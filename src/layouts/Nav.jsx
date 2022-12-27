@@ -6,24 +6,34 @@ import { IoClose }  from "react-icons/io5"
 
 function Nav() {
   const [navigation, setNavigation] = useState(false)
+  const [navBar, setNavBar] = useState(false)
 
   const toggleNav = () => {
     setNavigation(!navigation)
   }
 
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavBar(true)
+    } else {
+      setNavBar(false)
+    }
+  }
+
+  window.addEventListener("scroll", changeBackground)
+
   return (
     <nav>
-      <div className="main-nav">
+      <div className={`main-nav ${navBar ? "active" : ""}`}>
         <div className="nav-item">
           <img className="nav-logo" src="./logo.png" alt="logo" />
         </div>
         <div className="nav-item nav-items">
         <button className="nav-link" onClick={() => window.location.replace("/")}>Inicio</button>
         <button className="nav-link" onClick={() => window.location.replace("/#comics")} >Comics</button>
-
         </div>
         <div className="nav-item">
-          <Button buttonType="login-btn" text="Iniciar Sesión" />
+          <Button buttonType="login-btn" text="Iniciar Sesión" link="/" />
         </div>
         <div onClick={toggleNav} className="nav-item menu-button">
           <FiMenu fontSize="2em" className="menu-icon" />

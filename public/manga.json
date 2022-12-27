@@ -11,7 +11,7 @@
         "id": "id_del_manga_2",
         "author_id": "id_author_2",
         "company_id": "beastars",
-        "title": "beastars",
+        "title": "",
         "photo": "https://storage.googleapis.com/minga/manga__beastars.jpg",
         "description": "The story takes place in a world of anthropomorphic animals with a cultural divide between carnivores and herbivores.",
         "category": "id_category_3"
