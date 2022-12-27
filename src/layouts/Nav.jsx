@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import "../styles/Nav.css"
 import Button from "../components/Button"
 import { FiMenu } from "react-icons/fi"
-import { IoClose }  from "react-icons/io5"
+import { IoClose } from "react-icons/io5"
+import { Link } from "react-router-dom"
 
 function Nav() {
   const [navigation, setNavigation] = useState(false)
@@ -29,11 +30,15 @@ function Nav() {
           <img className="nav-logo" src="./logo.png" alt="logo" />
         </div>
         <div className="nav-item nav-items">
-        <button className="nav-link" onClick={() => window.location.replace("/")}>Inicio</button>
-        <button className="nav-link" onClick={() => window.location.replace("/#comics")} >Comics</button>
+          <Link className="nav-link" to={"/"}>
+            Inicio
+          </Link>
+          <Link className="nav-link" to={"/comics"}>
+            Comics
+          </Link>
         </div>
         <div className="nav-item">
-          <Button buttonType="login-btn" text="Iniciar Sesión" link="/" />
+          <Link className="login-btn" to={"/"} >Iniciar Sesión</Link>
         </div>
         <div onClick={toggleNav} className="nav-item menu-button">
           <FiMenu fontSize="2em" className="menu-icon" />
@@ -41,15 +46,19 @@ function Nav() {
       </div>
       <div className={`mobile-nav ${navigation ? "show-menu" : ""} `}>
         <div onClick={toggleNav} className="close-button">
-        <IoClose fontSize="2em" color="white"/>
+          <IoClose fontSize="2em" color="white" />
         </div>
         <div className="mobile-nav-items">
           <ul className="nav-links">
-            <li >
-              <button className="nav-link" onClick={() => window.location.replace("/")}>Inicio</button>
+            <li>
+              <Link className="nav-link" to={"/"}>
+                Inicio
+              </Link>{" "}
             </li>
-            <li >
-              <button className="nav-link" onClick={() => window.location.replace("/#comics")} >Comics</button>
+            <li>
+              <Link className="nav-link" to={"/comics"}>
+                Comics
+              </Link>
             </li>
           </ul>
         </div>

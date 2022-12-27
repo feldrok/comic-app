@@ -35,6 +35,10 @@
     height: 20%;
 }
 
+.title-container {
+    display: flex;
+}
+
 .comic-title {
     font-size: 1.2rem;
     font-weight: 600;

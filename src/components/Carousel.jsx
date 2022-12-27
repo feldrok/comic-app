@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import "../styles/Carousel.css"
 import Slide from "../components/Slide"
 import Button from "../components/Button"
+import { Link } from "react-router-dom"
 
 function Carousel() {
   const [current, setCurrent] = useState(0)
@@ -52,7 +53,7 @@ function Carousel() {
             >
               <Slide fotoUrl={mangas[current]?.photo} />
             </div>
-            <p className="caption">{mangas[current]?.title !== "" ? mangas[current]?.title : "sin titulo" }</p>
+            <Link to={`/details/${mangas[current]?.id}`} className="caption">{mangas[current]?.title !== "" ? mangas[current]?.title : "sin titulo" }</Link>
           </div>
           <Button
             buttonType="right-arrow"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ComicCard from "./ComicCard"
-import "../styles/Comics.css"
+import "../styles/ComicsSection.css"
 
 function Comics() {
   const [mangas, setMangas] = useState([])
@@ -26,6 +26,7 @@ function Comics() {
         <div className="comics-wrap">
           {mangas.map((manga) => (
             <ComicCard
+              key={manga.id}
               photoUrl={manga.photo}
               title={manga.title}
               id={manga.id}
