@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import "../styles/Carousel.css"
 import Slide from "../components/Slide"
+import Button from "../components/Button"
+import { Link } from "react-router-dom"
 
 function Carousel() {
   const [current, setCurrent] = useState(0)
@@ -23,7 +25,7 @@ function Carousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide()
-    }, 2000)
+    }, 4000)
     return () => clearInterval(interval)
   })
 
@@ -33,38 +35,40 @@ function Carousel() {
   const prevSlide = () => {
     setCurrent(current === 0 ? mangas.length - 1 : current - 1)
   }
+  const setActive = (index) => {
+    setCurrent(index)
+  }
 
   return (
     <div className="carousel" id="comics">
       <div className="carousel-container">
         <div className="carousel-wrap">
-          <button onClick={prevSlide} className="left-arrow">
-            &#10094;
-          </button>
+          <Button buttonType="left-arrow" text="&#10094;" onClick={prevSlide} />
           <div className="carousel-content-wrap">
-            <p className="image-number">{current + 1 + " / " + mangas.length}</p>
+            <p className="image-number">
+              {current + 1 + " / " + mangas.length}
+            </p>
             <div
               className="carousel-content"
-              style={{ transform: `translateX(-${current * 100}%)` }}
             >
               <Slide fotoUrl={mangas[current]?.photo} />
-              <Slide fotoUrl={mangas[current]?.photo} />
-              <Slide fotoUrl={mangas[current]?.photo} />
-              <Slide fotoUrl={mangas[current]?.photo} />
-              <Slide fotoUrl={mangas[current]?.photo} />
             </div>
-            <p className="caption">{mangas[current]?.title}</p>
+            <Link to={`/details/${mangas[current]?.id}`} className="caption">{mangas[current]?.title !== "" ? mangas[current]?.title : "sin titulo" }</Link>
           </div>
-          <button onClick={nextSlide} className="right-arrow">
-            &#10095;
-          </button>
+          <Button
+            buttonType="right-arrow"
+            text="&#10095;"
+            onClick={nextSlide}
+          />
         </div>
         <div className="dot-container">
-          <span className={`dot ${current === 0 ? "dot-active" : ""}`}></span>
-          <span className={`dot ${current === 1 ? "dot-active" : ""}`}></span>
-          <span className={`dot ${current === 2 ? "dot-active" : ""}`}></span>
-          <span className={`dot ${current === 3 ? "dot-active" : ""}`}></span>
-          <span className={`dot ${current === 4 ? "dot-active" : ""}`}></span>
+          {mangas.map((manga, index) => (
+            <span
+              onClick={() => setActive(index)}
+              key={index}
+              className={index === current ? "dot dot-active" : "dot"}
+            ></span>
+          ))}
         </div>
       </div>
     </div>
