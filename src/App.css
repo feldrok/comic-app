@@ -1,6 +1,5 @@
 .App {
+  font-family: 'Roboto', sans-serif;
   text-align: center;
-  -webkit-user-select: none;
-  user-select: none;
   background-color: #ebebeb;
 }

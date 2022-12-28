@@ -1,5 +1,6 @@
 import React from "react"
 import Button from "./Button"
+import { Link } from "react-router-dom"
 
 function HomeHero() {
   return (
@@ -14,7 +15,7 @@ function HomeHero() {
         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
         cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
       </p>
-      <Button buttonType="get-started-btn" text="Empezar →" link="#comics" />
+      <Link className="get-started-btn"  to={"#comics"} >Empezar →</Link>
     </>
   )
 }
