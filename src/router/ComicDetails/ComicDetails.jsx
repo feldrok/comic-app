@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import Hero from "../../components/Hero"
 import ComicDetailHero from "../../components/ComicDetailHero"
 import ComicDetail from "../../components/ComicDetail"
-import Nav from "../../layouts/Nav"
 import { useParams } from "react-router-dom"
 
 function ComicDetails() {
@@ -25,7 +24,6 @@ function ComicDetails() {
 
   return (
     <>
-      <Nav />
       <Hero>
         <ComicDetailHero />
       </Hero>

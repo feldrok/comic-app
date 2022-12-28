@@ -14,8 +14,8 @@ function Footer() {
       <div>
         <h1>Pages</h1>
         <ul className='footer-links'>
-          <li><button href="#">Inicio</button></li>
-          <li><button href="#">Comics</button></li>
+          <li><button>Inicio</button></li>
+          <li><button>Comics</button></li>
         </ul>
       </div>
     </footer>

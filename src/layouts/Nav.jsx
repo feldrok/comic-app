@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "../styles/Nav.css"
-import Button from "../components/Button"
 import { FiMenu } from "react-icons/fi"
 import { IoClose } from "react-icons/io5"
 import { Link } from "react-router-dom"
@@ -53,7 +52,7 @@ function Nav() {
             <li>
               <Link className="nav-link" to={"/"}>
                 Inicio
-              </Link>{" "}
+              </Link>
             </li>
             <li>
               <Link className="nav-link" to={"/comics"}>
