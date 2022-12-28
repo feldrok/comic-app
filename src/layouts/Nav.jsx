@@ -36,8 +36,9 @@ function Nav() {
             Comics
           </Link>
         </div>
-        <div className="nav-item">
-          <Link className="login-btn" to={"/"} >Iniciar Sesión</Link>
+        <div className="nav-item log-buttons">
+          <Link className="login-btn" to={"/"} >Entrar</Link>
+          <Link className="login-btn" to={"/"} >Registrarse</Link>
         </div>
         <div onClick={toggleNav} className="nav-item menu-button">
           <FiMenu fontSize="2em" className="menu-icon" />
